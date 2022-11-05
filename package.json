@@ -1,26 +1,43 @@
 {
-  "name": "docify",
-  "version": "1.0.0",
-  "description": "Tool to automate your API docs",
-  "main": "index.js",
-  "author": "Abhinandan Sharma",
-  "license": "MIT",
-  "scripts": {
-    "build": "yarn tsc",
-    "dev": "nodemon dist/index.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "module-alias": "^2.2.2",
-    "source-map-support": "^0.5.21",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.4"
-  },
-  "_moduleAliases": {
-    "~": "dist/"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.14"
-  }
+    "name": "@abhinandan824/lazydoc",
+    "repository": "https://github.com/abhi-824/docify",
+    "version": "1.0.1",
+    "description": "Tool to automate your API docs",
+    "main": "dist/index.js",
+    "author": "Abhinandan Sharma",
+    "license": "MIT",
+    "scripts": {
+        "build": "yarn tsc",
+        "dev": "nodemon dist/index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "module-alias": "^2.2.2",
+        "source-map-support": "^0.5.21",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.8.4"
+    },
+    "devDependencies": {
+        "@types/chalk": "^2.2.0",
+        "@types/express": "^4.17.14",
+        "@types/fs-extra": "^9.0.13",
+        "@types/node": "^17.0.24",
+        "@typescript-eslint/eslint-plugin": "^5.19.0",
+        "@typescript-eslint/parser": "^5.19.0",
+        "eslint": "^8.13.0",
+        "eslint-config-prettier": "^8.5.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.8",
+        "nodemon": "^2.0.15"
+    },
+    "_moduleAliases": {
+        "~": "dist/"
+    },
+    "lint-staged": {
+        "*.{ts,js}": "eslint --cache --fix",
+        "*.{ts,js,css,md}": "prettier --write",
+        "*.js": "eslint --cache --fix",
+        "*.{js,css,md}": "prettier --write"
+    }
 }
